@@ -39,8 +39,9 @@ func (c *Client) Upload(bucket, filename string, file io.Reader) (*UploadRespons
 	}
 	defer resp.Body.Close()
 
+	respBody, _ := io.ReadAll(resp.Body)
 	if resp.StatusCode >= 400 {
-		return nil, &APIError{StatusCode: resp.StatusCode, Message: "upload failed"}
+		return nil, &APIError{StatusCode: resp.StatusCode, Message: string(respBody)}
 	}
 
 	var result UploadResponse
