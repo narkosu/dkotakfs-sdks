@@ -1,0 +1,17 @@
+{
+  "name": "@narkosu/dkotakfs",
+  "version": "1.0.0",
+  "description": "Official JavaScript SDK for KotakFS distributed file storage",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.cjs"
+    }
+  },
+  "files": ["src/"],
+  "keywords": ["kotakfs", "file-storage", "sdk"],
+  "license": "MIT"
+}
